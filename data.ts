@@ -1,80 +1,110 @@
-export const myData =[
+export const myData = [
     {
-        _id:"1",
-        title:"WAVE Earbuds",
-        img:'/image 7.png',
-        price:4990,
-        discount:990,
+        _id: "1",
+        title: "WAVE Earbuds",
+        img: '/image 7.png',
+        multiimages: ['/image 8.png'],
+        price: 4990,
+        discount: 990,
         quantity: 1,
-        category:["earbuds","trending"]
-
+        category: ["earbuds", "trending"],
+        description: "Experience high-fidelity sound with the WAVE Earbuds. Featuring advanced noise cancellation technology, crystal-clear audio, and a comfortable fit, these earbuds are designed for an immersive listening experience. With a long battery life and Bluetooth connectivity, enjoy seamless music and calls on the go.",
+        attribute: ["Bluetooth", "Noise Cancelling", "Long Battery Life"]
     },
     {
-        _id:"2",
-        title:"Luna Smart Watch",
-        img:'/image 8.png',
-        price:5500,
-        discount:5500-4500,
+        _id: "2",
+        title: "Luna Smart Watch",
+        img: '/image 8.png',
+        multiimages: ['/image 7.png'],
+        price: 5500,
+        discount: 1000,
         quantity: 1,
-        category:["Smart Watches","trending"]
-
+        category: ["Smart Watches", "trending"],
+        description: "The Luna Smart Watch is the perfect blend of style and technology. Featuring a sleek design, real-time health tracking, heart rate monitoring, GPS navigation, and a water-resistant body, this smartwatch keeps you connected and active throughout the day. Stay on top of your fitness goals while receiving smart notifications directly on your wrist.",
+        attribute: ["Heart Rate Monitor", "GPS", "Water Resistant"]
     },
     {
-        _id:"3",
-        title:"WAVE Earbuds",
-        img:'/image 7.png',
-        price:4990,
-        discount:990,
+        _id: "3",
+        title: "WAVE Earbuds",
+        img: '/image 7.png',
+        multiimages: ['/image 8.png'],
+        price: 4990,
+        discount: 990,
         quantity: 1,
-        category:["earbuds","trending"]
-
+        category: ["earbuds", "trending"],
+        description: "Immerse yourself in high-quality sound with the WAVE Earbuds. Designed for superior comfort and durability, these earbuds feature an ergonomic design, deep bass, and crystal-clear treble. With fast charging and extended battery life, you can enjoy your favorite music and calls without interruptions.",
+        attribute: ["Bluetooth", "Noise Cancelling", "Long Battery Life"]
     },
     {
-        _id:"4",
-        title:"Luna Smart Watch",
-        img:'/image 8.png',
-        price:5500,
-        discount:5500-4500,
+        _id: "4",
+        title: "Luna Smart Watch",
+        img: '/image 8.png',
+        multiimages: ['/image 7.png'],
+        price: 5500,
+        discount: 1000,
         quantity: 1,
-        category:["Smart Watches","trending"]
-
+        category: ["Smart Watches", "trending"],
+        description: "Stay ahead of your fitness game with the Luna Smart Watch. This all-in-one smartwatch offers real-time activity tracking, step counting, heart rate monitoring, and a sleep tracker. With a premium build and customizable watch faces, it’s the perfect accessory for every occasion.",
+        attribute: ["Heart Rate Monitor", "GPS", "Water Resistant"]
     },
     {
-        _id:"5",
-        title:"WAVE Earbuds",
-        img:'/image 7.png',
-        price:4990,
-        discount:990,
+        _id: "5",
+        title: "WAVE Earbuds",
+        img: '/image 7.png',
+        multiimages: ['/image 8.png'],
+        price: 4990,
+        discount: 990,
         quantity: 1,
-        category:["earbuds","trending"]
-
+        category: ["earbuds", "trending"],
+        description: "WAVE Earbuds provide exceptional audio quality with deep bass, clear vocals, and immersive sound. The lightweight design ensures a snug fit, making them perfect for workouts, commutes, and everyday use. With noise isolation and touch controls, enjoy an effortless listening experience.",
+        attribute: ["Bluetooth", "Noise Cancelling", "Long Battery Life"]
     },
     {
-        _id:"6",
-        title:"Luna Smart Watch",
-        img:'/image 8.png',
-        price:5500,
+        _id: "6",
+        title: "Luna Smart Watch",
+        img: '/image 8.png',
+        multiimages: ['/image 7.png'],
+        price: 5500,
+        discount: 1000,
         quantity: 1,
-        category:["Smart Watches","trending"]
-
+        category: ["Smart Watches", "trending"],
+        description: "Luna Smart Watch redefines convenience with its multi-functional capabilities. From monitoring your heart rate and tracking your fitness to receiving calls and notifications, this smartwatch keeps you connected throughout the day. Its sleek and stylish design makes it a must-have accessory.",
+        attribute: ["Heart Rate Monitor", "GPS", "Water Resistant"]
     },
     {
-        _id:"7",
-        title:"WAVE Earbuds",
-        img:'/image 7.png',
-        price:4990,
-        discount:990,
+        _id: "7",
+        title: "WAVE Earbuds",
+        img: '/image 7.png',
+        multiimages: ['/image 8.png'],
+        price: 4990,
+        discount: 990,
         quantity: 1,
-        category:["earbuds","trending"]
-
+        category: ["earbuds", "trending"],
+        description: "Designed for music lovers, the WAVE Earbuds deliver an immersive listening experience with powerful bass and superior clarity. Equipped with advanced Bluetooth technology, these earbuds ensure a stable connection and effortless pairing with any device.",
+        attribute: ["Bluetooth", "Noise Cancelling", "Long Battery Life"]
     },
     {
-        _id:"8",
-        title:"Luna Smart Watch",
-        img:'/image 8.png',
-        price:5500,
+        _id: "8",
+        title: "Luna Smart Watch",
+        img: '/image 8.png',
+        multiimages: ['/image 7.png'],
+        price: 5500,
+        discount: 1000,
         quantity: 1,
-        category:["Smart Watches","trending"]
-
+        category: ["Smart Watches", "trending"],
+        description: "Take your fitness tracking to the next level with the Luna Smart Watch. It features an intuitive interface, customizable dials, and advanced health metrics to help you stay on track with your wellness journey. Whether you're running, swimming, or just going about your day, this smartwatch has you covered.",
+        attribute: ["Heart Rate Monitor", "GPS", "Water Resistant"]
     },
-]
+    {
+        _id: "9",
+        title: "Luna Smart Watch",
+        img: '/image 7.png',
+        multiimages: ['/image 8.png'],
+        price: 5500,
+        discount: 1000,
+        quantity: 1,
+        category: ["Smart Watches", "trending"],
+        description: "The Luna Smart Watch is built for the modern lifestyle, offering fitness tracking, smart notifications, and seamless connectivity. Whether you're tracking your daily steps or monitoring your heart rate, this smartwatch is your ultimate companion for a healthier, smarter lifestyle.",
+        attribute: ["Heart Rate Monitor", "GPS", "Water Resistant"]
+    }
+];

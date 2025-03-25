@@ -29,7 +29,7 @@ const Discount: React.FC<DiscountProps> = (props) => {
   return (
     <div>
       {props.discount ? (
-        <div className={`flex md:gap-3 gap-2 ${props.className}`}>
+        <div className={`flex md:gap-3 md:text-wrap text-nowrap md:flex-row flex-col gap-2 ${props.className}`}>
           <span className="line-through text-gray-500 font-bold">Rs. {formatRate(props.rate)}.00</span>
           <span className="text-[#059DDE] font-bold">Rs. {formatRate(discountedPrice)}.00</span>
         </div>

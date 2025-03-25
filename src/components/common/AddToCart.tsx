@@ -16,6 +16,14 @@ const AddToCart: React.FC<AddToCartProps> = ({ onClose }) => {
     }, 0);
   };
 
+  const MovetoCart = () =>{
+    window.location.href = '/cart'
+  }
+
+  const MovetoCheckout = () =>{
+    window.location.href = '/checkout'
+  }
+
   return (
     <div className="flex flex-col h-full">
       <div className="flex flex-row justify-between p-5 items-center sticky top-0 bg-white z-10">
@@ -30,16 +38,17 @@ const AddToCart: React.FC<AddToCartProps> = ({ onClose }) => {
           <p>Your cart is empty.</p>
         ) : (
           cartItems.map((item) => (
-            <div key={item._id} className="flex justify-between items-center border-b py-2">
+            <div key={item.id} className="flex justify-between  items-center border-b py-2">
               <div className="flex items-center">
                 {item.img && <img src={item.img} alt={item.title} className="h-16 w-16 object-cover mr-2" />}
-                <div>
+                <div className='flex flex-col gap-2'>
                   <h4 className="font-semibold">{item.title}</h4>
+                  <p className='text-sm font-light text-nowrap'>{item.selectedAttribute}</p>
                   <div className="flex items-center">
-                    <button onClick={() => decrementQuantity(item._id)} className="px-2 py-1 bg-gray-300 rounded">-</button>
+                    <button onClick={() => decrementQuantity(item.id,item.selectedAttribute)} className="px-2 py-1 bg-gray-300 rounded">-</button>
                     <span className="mx-2">{item.quantity}</span>
-                    <button onClick={() => incrementQuantity(item._id)} className="px-2 py-1 bg-gray-300 rounded">+</button>
-                    <button onClick={() => removeFromCart(item._id)} className="ml-4 text-red-500">Delete</button>
+                    <button onClick={() => incrementQuantity(item.id,item.selectedAttribute)} className="px-2 py-1 bg-gray-300 rounded">+</button>
+                    <button onClick={() => removeFromCart(item.id,item.selectedAttribute)} className="ml-4 text-red-500">Delete</button>
                   </div>
                 </div>
               </div>
@@ -55,8 +64,8 @@ const AddToCart: React.FC<AddToCartProps> = ({ onClose }) => {
         <span>Rs. {calculateTotal().toFixed(2)}</span>
         </div>
         <div className="flex justify-between mt-4">
-          <button className="px-4 py-2 bg-blue-500 text-white rounded">View Cart</button>
-          <button className="px-4 py-2 bg-green-500 text-white rounded">Proceed to Checkout</button>
+          <button onClick={MovetoCart} className="px-4 py-2 bg-blue-500 text-white rounded">View Cart</button>
+          <button onClick={MovetoCheckout} className="px-4 py-2 bg-green-500 text-white rounded">Proceed to Checkout</button>
         </div>
       </div>
     </div>

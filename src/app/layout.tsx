@@ -18,23 +18,15 @@ export const myMenu = [
     url:'/'
   },
   {
-    title:"Watches",
-    url:'/'
+    title:"Shop",
+    url:'/shop'
   },
   {
-    title:"Airpods",
-    url:'/'
+    title:"About us",
+    url:'/about'
   },
   {
-    title:"HeadPhones",
-    url:'/'
-  },
-  {
-    title:"Speakers",
-    url:'/'
-  },
-  {
-    title:"Contact Us",
+    title:"Contact",
     url:'/'
   },
 
