@@ -20,7 +20,7 @@ export const GET_PRODUCTS_QUERY = `
 export const fetchProducts = async () => {
     try {
       const data = await client.request(GET_PRODUCTS_QUERY);
-      console.log(data.getProducts)
+      // console.log(data.getProducts)
       return data.getProducts;
     } catch (error) {
       console.error("❌ Error Fetching Products:", error);

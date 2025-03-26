@@ -12,6 +12,8 @@ export interface CartItem {
   category: string[];
   attribute?: string[]; 
   selectedAttribute: string | null;  // NEW: Selected Attribute Field
+  salePrice: number; // Ensure salePrice is always defined
+
 }
 
 interface CartContextType {
@@ -48,9 +50,13 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const existingItemIndex = prevItems.findIndex(cartItem => 
         cartItem.id === item.id && cartItem.selectedAttribute === item.selectedAttribute
       );
-
+  
+      // Calculate Sale Price only if discount exists
+      const calculatedSalePrice = item.discount
+      ? Math.max(item.price - item.discount, 0) // Ensure it doesn't go negative
+      : undefined;
+  
       if (existingItemIndex !== -1) {
-        // If same product & same attribute exists, increment quantity
         const updatedItems = [...prevItems];
         updatedItems[existingItemIndex] = {
           ...updatedItems[existingItemIndex],
@@ -58,11 +64,11 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         };
         return updatedItems;
       } else {
-        // If product/attribute combination is new, add as separate item
-        return [{ ...item, quantity: 1 }, ...prevItems];
+        return [{ ...item, salePrice: calculatedSalePrice, quantity: 1 }, ...prevItems];
       }
     });
   };
+  
 
   const incrementQuantity = (id: string, selectedAttribute: string | null) => {
     setCartItems(prevItems =>

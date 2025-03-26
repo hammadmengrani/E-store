@@ -93,6 +93,7 @@ export const GET_ORDERS_QUERY = `
       customerName
       email
       totalAmount
+      address
       status
       createdAt
       items {
@@ -100,6 +101,8 @@ export const GET_ORDERS_QUERY = `
         title
         price
         quantity
+        salePrice  
+        category   
         total
       }
     }
@@ -109,10 +112,48 @@ export const GET_ORDERS_QUERY = `
 export const fetchOrders = async (): Promise<Order[]> => {
   try {
     const data = await client.request<{ getOrders: Order[] }>(GET_ORDERS_QUERY);
-    console.log("✅ Orders Fetched:", data.getOrders);
+    // console.log("✅ Orders Fetched:", data.getOrders);
     return data.getOrders;
   } catch (error) {
     console.error("❌ Error Fetching Orders:", error);
     return [];
+  }
+};
+
+
+export const GET_LAST_ORDER_QUERY = `
+  query GetLastOrder {
+    getLastOrder {
+      id
+      orderNumber
+      customerName
+      email
+      totalAmount
+      status
+      address
+      postalCode
+      city
+      createdAt
+      items {
+        productId
+        title
+        price
+        quantity
+        salePrice
+        category
+        total
+      }
+    }
+  }
+`;
+
+export const fetchLastOrder = async (): Promise<Order | null> => {
+  try {
+    const data = await client.request<{ getLastOrder: Order }>(GET_LAST_ORDER_QUERY);
+    // console.log("✅ Last Order Fetched:", data.getLastOrder);
+    return data.getLastOrder;
+  } catch (error) {
+    console.error("❌ Error Fetching Last Order:", error);
+    return null;
   }
 };

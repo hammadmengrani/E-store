@@ -17,7 +17,7 @@ const page = () => {
   return (
     <div className='flex md:flex-row flex-col items-start justify-center py-5 gap-10'>
         <Checkout/>
-        <CartDetail/>
+        <CartDetail checkout={true}/>
 
     </div>
   )

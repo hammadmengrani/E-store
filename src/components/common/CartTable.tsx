@@ -45,14 +45,14 @@ const CartTable: React.FC<CartTableProps> = ({ cartItems }) => {
                 <div className="flex items-center justify-center gap-2">
                   <button
                     className="px-3 py-1 bg-gray-200 rounded"
-                    onClick={() => decrementQuantity(item._id, item.selectedAttribute)}
+                    onClick={() => decrementQuantity(item.id, item.selectedAttribute)}
                   >
                     -
                   </button>
                   <span className="w-8 text-center">{item.quantity}</span>
                   <button
                     className="px-3 py-1 bg-gray-200 rounded"
-                    onClick={() => incrementQuantity(item._id, item.selectedAttribute)}
+                    onClick={() => incrementQuantity(item.id, item.selectedAttribute)}
                   >
                     +
                   </button>
@@ -62,7 +62,7 @@ const CartTable: React.FC<CartTableProps> = ({ cartItems }) => {
               <td className="p-3">
                 <button
                   className="text-red-600 hover:underline"
-                  onClick={() => removeFromCart(item._id, item.selectedAttribute)}
+                  onClick={() => removeFromCart(item.id, item.selectedAttribute)}
                 >
                   Delete
                 </button>

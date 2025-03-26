@@ -56,7 +56,9 @@ const Checkout = () => {
         title: item.title,
         quantity: item.quantity,
         price: item.price,
-        total: item.price * item.quantity,  // ✅ Ensure `total` is included
+        category:item.category,
+        total: item.price * item.quantity,  // ✅ Ensure `total` is included,
+        salePrice:item.salePrice
       }));
   
       // 🔹 Calculate Total Amount
@@ -89,6 +91,7 @@ const Checkout = () => {
       if (response) {
         toast.success("✅ Order placed successfully!");
         clearCart(); // Empty the cart after successful order
+        window.location.href = '/order'
         setForm(initialFormState);
       } else {
         throw new Error("Order placement failed.");
