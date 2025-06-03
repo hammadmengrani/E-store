@@ -29,10 +29,13 @@ const ProductDescription = (props: productDetail) => {
             img: props.img || '',
             price: props.price,
             discount: props.discount,
+            salePrice: props.discount 
+                ? props.price - (props.price * props.discount) / 100 
+                : props.price, // Calculate sale price
             quantity: 1,   // Default quantity
             category: props.category,
             attribute: [selectedAttribute],  // Only selected attribute goes to cart
-            selectedAttribute:selectedAttribute
+            selectedAttribute: selectedAttribute
         });
     };
 

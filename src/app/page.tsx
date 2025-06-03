@@ -4,6 +4,7 @@ import SectionContainer from "@/components/container/SectionContainer";
 import Service from "@/components/common/Service";
 import Card from "@/components/common/Card";
 import { fetchProducts } from "@/graphql/product"; // ✅ API function import
+import PopupWrapper from "@/components/container/PopupWrapper";
 
 const imageUrls = ["/banner_1.png", "/banner_2.png", "/banner_3.png"];
 
@@ -18,6 +19,7 @@ const Page = async () => {
 
   return (
     <div>
+      <PopupWrapper/>
       <Banner images={imageUrls} />
       <SectionContainer
         className="container py-10 w-full mx-auto"

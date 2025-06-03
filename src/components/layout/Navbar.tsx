@@ -61,6 +61,9 @@ const Navbar: React.FC<NavbarProps> = ({ logo, menu }) => {
               alt="Search"
             />
           </a>
+          <a href={"/chat"} className="bg-[#059DDE] hover:bg-yellow-500 transition-all duration-300 rounded-full w-10 h-10 md:w-[45px] md:h-[45px] flex items-center justify-center">
+              <img src="/chat.svg" alt="" width={25} height={25} className="fliter invert"/>
+            </a>
         </div>
       </div>
       </div>

@@ -8,12 +8,21 @@ const Order = () => {
   useEffect(() => {
     const getOrders = async () => {
       const lastOrder = await fetchLastOrder();
-      console.log(lastOrder)
+      console.log(lastOrder);
       if (lastOrder) {
         setOrder(lastOrder);
+        // ✅ Store in localStorage
+        localStorage.setItem('lastOrder', JSON.stringify(lastOrder));
       }
     };
-    getOrders();
+
+    // Check localStorage first (optional optimization)
+    const storedOrder = localStorage.getItem('lastOrder');
+    if (storedOrder) {
+      setOrder(JSON.parse(storedOrder));
+    } else {
+      getOrders();
+    }
   }, []);
 
   if (!order) {
@@ -45,7 +54,7 @@ const Order = () => {
             <h3 className="text-[16px] font-bold">Contact Information</h3>
             <p className="text-[14px]">{order.email}</p>
           </div>
-          <div className="flex flex-col ">
+          <div className="flex flex-col">
             <h3 className="text-[16px] font-bold">Payment Method</h3>
             <p className="text-[14px]">Cash On Delivery</p>
           </div>
@@ -57,7 +66,7 @@ const Order = () => {
             <p className="text-[14px]">{shippingAddress.address}</p>
             <p className="text-[14px]">{shippingAddress.city}</p>
             {shippingAddress.postal && (
-                <p className="text-[14px]">{shippingAddress.postal}</p>
+              <p className="text-[14px]">{shippingAddress.postal}</p>
             )}
           </div>
           <div className="flex flex-col">
@@ -67,8 +76,10 @@ const Order = () => {
         </div>
       </div>
       <div className="flex justify-between text-[14px] w-full items-center">
-        <span className="text-gray-400">Need help? <a className="text-blue-600" href="/contact">Contact Us</a></span>
-        <button 
+        <span className="text-gray-400">
+          Need help? <a className="text-blue-600" href="/contact">Contact Us</a>
+        </span>
+        <button
           className="bg-blue-700 text-white px-4 py-2 rounded"
           onClick={() => window.location.href = "/"}
         >

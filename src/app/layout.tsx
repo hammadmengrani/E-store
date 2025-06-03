@@ -4,6 +4,9 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { CartProvider } from "@/context/CartContext";
+import { LoadingProvider } from "@/context/Loading";
+import Buttons from "@/components/common/Buttons";
+
 
 const roboto = Roboto({ subsets: ["latin"],weight:"400" });
 
@@ -41,8 +44,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         <CartProvider>
+        <LoadingProvider>
         <Navbar logo="/logo.png" menu={myMenu} />
         {children}
+        </LoadingProvider>
         <Footer/>
         </CartProvider>
         </body>
